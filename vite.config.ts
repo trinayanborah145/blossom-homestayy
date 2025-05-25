@@ -8,4 +8,9 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   base: '/',
+  build: {
+    rollupOptions: {
+      external: ['/src/main.tsx']
+    }
+  }
 });
