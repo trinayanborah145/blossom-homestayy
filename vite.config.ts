@@ -7,11 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  build: {
-    outDir: 'dist',
-    rollupOptions: {
-      external: ['/src/main.tsx']
-    }
-  },
-  base: './'
+  base: '/',
 });
