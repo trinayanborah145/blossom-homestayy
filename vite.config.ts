@@ -10,7 +10,21 @@ export default defineConfig({
   base: '/',
   build: {
     rollupOptions: {
-      external: ['/src/main.tsx']
-    }
+      external: ['/src/main.tsx'],
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['lucide-react']
+        }
+      }
+    },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    chunkSizeWarningLimit: 1000
   }
 });
